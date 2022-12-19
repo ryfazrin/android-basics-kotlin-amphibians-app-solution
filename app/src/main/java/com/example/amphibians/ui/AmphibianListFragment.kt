@@ -36,11 +36,7 @@ class AmphibianListFragment : Fragment() {
         viewModel.getAmphibianList()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.recyclerView.adapter = AmphibianListAdapter(AmphibianListener { amphibian ->
-            viewModel.onAmphibianClicked(amphibian)
-            findNavController()
-                .navigate(R.id.action_amphibianListFragment_to_amphibianDetailFragment)
-        })
+        binding.recyclerView.adapter = AmphibianListAdapter()
 
         // Inflate the layout for this fragment
         return binding.root
